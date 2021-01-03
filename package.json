@@ -1,0 +1,20 @@
+{
+  "name": "financial-xis",
+  "version": "1.0.0",
+  "description": "Personal finance and expense recording application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["financial", "personal", "expense", "investment"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateusxis/financial-xis.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mateusxis/financial-xis/issues"
+  },
+  "homepage": "https://github.com/mateusxis/financial-xis#readme",
+  "license": "MIT"
+}
