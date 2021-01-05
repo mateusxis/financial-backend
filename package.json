@@ -1,12 +1,17 @@
 {
-  "name": "financial-xis",
+  "name": "financial-backend",
   "version": "1.0.0",
   "description": "Personal finance and expense recording application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["financial", "personal", "expense", "investment"],
+  "keywords": [
+    "financial",
+    "personal",
+    "expense",
+    "investment"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mateusxis/financial-xis.git"
@@ -16,5 +21,30 @@
     "url": "https://github.com/mateusxis/financial-xis/issues"
   },
   "homepage": "https://github.com/mateusxis/financial-xis#readme",
-  "license": "MIT"
+  "license": "MIT",
+  "lint-staged": {
+    "*.(gql|css|scss|json|yml|md)": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  }
 }
