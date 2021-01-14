@@ -4,6 +4,8 @@
   "description": "Personal finance and expense recording application",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write '**/*.{js,json,md}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -49,8 +51,10 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-security": "^1.4.0",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1"
