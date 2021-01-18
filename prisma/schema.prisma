@@ -1,6 +1,6 @@
 datasource db {
   provider = "mysql"
-  url = "mysql://root:20755010Xis@35.247.236.29:3306/financialxis"
+  url = env("MYSQL_URL")
 }
 
 generator client {
