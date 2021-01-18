@@ -1,0 +1,95 @@
+datasource db {
+  provider = "mysql"
+  url = "mysql://root:20755010Xis@35.247.236.29:3306/financialxis"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+  category String
+  createdAt DateTime @default(now())
+}
+
+model Class {
+  id Int @id @default(autoincrement())
+  category    Category?     @relation(fields: [categoryId], references: [id])
+  subcategory    Subcategory?     @relation(fields: [subcategoryId], references: [id])
+  categoryId  Int?
+  subcategoryId  Int?
+  createdAt DateTime @default(now())
+  @@unique([categoryId, subcategoryId], name: "uniCategorySub")
+}
+
+model Credit {
+  id Int @id @default(autoincrement())
+  datePayment DateTime
+  description String
+  value Float
+  origin    Origin?     @relation(fields: [originId], references: [id])
+  user    User?     @relation(fields: [userId], references: [id])
+  originId  Int?
+  userId  Int?
+}
+
+model Debite {
+  id Int @id @default(autoincrement())
+  description String
+  value Float
+  datePayment DateTime
+  isPay DateTime
+  class    Class?     @relation(fields: [classId], references: [id])
+  methodPayment    MethodPayment?     @relation(fields: [methodPaymentId], references: [id])
+  sector    Sector?     @relation(fields: [sectorId], references: [id])
+  user    User?     @relation(fields: [userId], references: [id])
+  classId  Int?
+  methodPaymentId  Int?
+  sectorId  Int?
+  userId  Int?
+}
+
+model MethodPayment {
+  id Int @id @default(autoincrement())
+  methodPayment String
+  createdAt DateTime @default(now())
+}
+
+model Operation {
+  id Int @id @default(autoincrement())
+  balance_last Float
+  balance_now Float
+  rollback DateTime
+  credit    Credit?     @relation(fields: [creditId], references: [id])
+  debite    Debite?     @relation(fields: [debiteId], references: [id])
+  user    User?     @relation(fields: [userId], references: [id])
+  creditId  Int?
+  debiteId  Int?
+  userId  Int?
+}
+
+model Origin {
+  id Int @id @default(autoincrement())
+  origin String
+}
+
+model Sector {
+  id Int @id @default(autoincrement())
+  sector String
+  createdAt DateTime @default(now())
+}
+
+model Subcategory {
+  id Int @id @default(autoincrement())
+  subcategory String
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  createdAt DateTime @default(now())
+}
