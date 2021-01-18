@@ -51,13 +51,15 @@
     "koa-compress": "^5.0.1",
     "koa-helmet": "^6.0.0",
     "koa-router": "^10.0.0",
-    "nexus": "^1.0.0"
+    "nexus": "^1.0.0",
+    "nexus-plugin-prisma": "^0.28.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@prisma/cli": "2.14.0",
     "@types/node": "^14.14.21",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
