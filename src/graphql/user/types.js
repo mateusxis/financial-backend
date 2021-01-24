@@ -1,9 +1,6 @@
 const bcrypt = require('bcryptjs');
 const {
-  extendType,
-  nonNull,
-  objectType,
-  stringArg,
+  extendType, nonNull, objectType, stringArg,
 } = require('nexus');
 
 const User = objectType({
@@ -13,6 +10,7 @@ const User = objectType({
     t.model.name();
     t.model.email();
     t.model.password();
+    t.model.createdAt();
   },
 });
 
@@ -20,6 +18,7 @@ const addUserQueries = extendType({
   type: 'Query',
   definition(t) {
     t.crud.user();
+    t.crud.users();
   },
 });
 
@@ -30,7 +29,7 @@ const addUserMutations = extendType({
       type: 'User',
       args: {
         name: nonNull(stringArg()),
-        email: stringArg(),
+        email: nonNull(stringArg()),
         password: nonNull(stringArg()),
       },
       resolve: async (_, { name, email, password }, ctx) => {
