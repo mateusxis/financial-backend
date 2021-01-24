@@ -32,6 +32,7 @@ model Credit {
   user    User?     @relation(fields: [userId], references: [id])
   originId  Int?
   userId  Int?
+  createdAt DateTime @default(now())
 }
 
 model Debite {
@@ -48,6 +49,7 @@ model Debite {
   methodPaymentId  Int?
   sectorId  Int?
   userId  Int?
+  createdAt DateTime @default(now())
 }
 
 model MethodPayment {
@@ -67,11 +69,13 @@ model Operation {
   creditId  Int?
   debiteId  Int?
   userId  Int?
+  createdAt DateTime @default(now())
 }
 
 model Origin {
   id Int @id @default(autoincrement())
   origin String
+  createdAt DateTime @default(now())
 }
 
 model Sector {
