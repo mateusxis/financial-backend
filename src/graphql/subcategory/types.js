@@ -1,6 +1,4 @@
-const {
-  extendType, nonNull, objectType, stringArg,
-} = require('nexus');
+const { extendType, nonNull, objectType, stringArg } = require('nexus');
 
 const Subcategory = objectType({
   name: 'Subcategory',

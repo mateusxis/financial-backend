@@ -1,6 +1,4 @@
-const {
-  extendType, nonNull, objectType, stringArg,
-} = require('nexus');
+const { extendType, nonNull, objectType, stringArg } = require('nexus');
 
 const Category = objectType({
   name: 'Category',
@@ -37,4 +35,8 @@ const addCategoryMutations = extendType({
   },
 });
 
-module.exports = { Category, addCategoryQueries, addCategoryMutations };
+module.exports = {
+  Category,
+  addCategoryQueries,
+  addCategoryMutations,
+};

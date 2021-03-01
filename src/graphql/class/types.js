@@ -1,6 +1,4 @@
-const {
-  extendType, nonNull, objectType, intArg,
-} = require('nexus');
+const { extendType, nonNull, objectType, intArg } = require('nexus');
 
 const Class = objectType({
   name: 'Class',

@@ -1,6 +1,4 @@
-const {
-  extendType, nonNull, objectType, intArg, stringArg, floatArg,
-} = require('nexus');
+const { extendType, nonNull, objectType, intArg, stringArg, floatArg } = require('nexus');
 
 const Credit = objectType({
   name: 'Credit',
@@ -37,9 +35,7 @@ const addCreditMutations = extendType({
         originId: intArg(),
         userId: nonNull(intArg()),
       },
-      resolve: async (_, {
-        description, value, datePayment, originId, userId,
-      }, ctx) =>
+      resolve: async (_, { description, value, datePayment, originId, userId }, ctx) =>
         ctx.prisma.class.create({
           data: {
             description,

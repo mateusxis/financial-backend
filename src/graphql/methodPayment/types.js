@@ -1,6 +1,4 @@
-const {
-  extendType, nonNull, objectType, stringArg,
-} = require('nexus');
+const { extendType, nonNull, objectType, stringArg } = require('nexus');
 
 const MethodPayment = objectType({
   name: 'MethodPayment',
@@ -37,4 +35,8 @@ const addMethodPaymentMutations = extendType({
   },
 });
 
-module.exports = { MethodPayment, addMethodPaymentQueries, addMethodPaymentMutations };
+module.exports = {
+  MethodPayment,
+  addMethodPaymentQueries,
+  addMethodPaymentMutations,
+};
