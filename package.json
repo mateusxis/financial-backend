@@ -52,6 +52,7 @@
     "koa-compress": "^5.0.1",
     "koa-helmet": "^6.0.0",
     "koa-router": "^10.0.0",
+    "mongoose": "^5.11.17",
     "nexus": "^1.0.0",
     "nexus-plugin-prisma": "^0.28.0"
   },
