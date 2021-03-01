@@ -2,113 +2,18 @@
 ### Do not make changes to this file directly
 
 
-type Category {
-  category: String!
-  createdAt: DateTime!
-  id: Int!
-}
-
-input CategoryWhereUniqueInput {
-  id: Int
-}
-
-type Class {
-  category: Category
-  categoryId: Int
-  createdAt: DateTime!
-  id: Int!
-  subcategory: Subcategory
-  subcategoryId: Int
-}
-
-input ClassUniCategorySubCompoundUniqueInput {
-  categoryId: Int!
-  subcategoryId: Int!
-}
-
-input ClassWhereUniqueInput {
-  id: Int
-  uniCategorySub: ClassUniCategorySubCompoundUniqueInput
-}
-
-scalar DateTime
-
-type MethodPayment {
-  createdAt: DateTime!
-  id: Int!
-  methodPayment: String!
-}
-
-input MethodPaymentWhereUniqueInput {
-  id: Int
-}
-
 type Mutation {
-  createCategory(category: String!): Category
-  createClass(categoryId: Int!, subcategoryId: Int!): Class
-  createMethodPayment(methodPayment: String!): MethodPayment
-  createOrigin(origin: String!): Origin
-  createSector(sector: String!): Sector
-  createSubcategory(subcategory: String!): Subcategory
   createUser(email: String!, name: String!, password: String!): User
 }
 
-type Origin {
-  createdAt: DateTime!
-  id: Int!
-  origin: String!
-}
-
-input OriginWhereUniqueInput {
-  id: Int
-}
-
 type Query {
-  categories(after: CategoryWhereUniqueInput, before: CategoryWhereUniqueInput, first: Int, last: Int): [Category!]!
-  category(where: CategoryWhereUniqueInput!): Category
-  class(where: ClassWhereUniqueInput!): Class
-  classes(after: ClassWhereUniqueInput, before: ClassWhereUniqueInput, first: Int, last: Int): [Class!]!
-  methodPayment(where: MethodPaymentWhereUniqueInput!): MethodPayment
-  methodPayments(after: MethodPaymentWhereUniqueInput, before: MethodPaymentWhereUniqueInput, first: Int, last: Int): [MethodPayment!]!
-  origin(where: OriginWhereUniqueInput!): Origin
-  origins(after: OriginWhereUniqueInput, before: OriginWhereUniqueInput, first: Int, last: Int): [Origin!]!
-  sector(where: SectorWhereUniqueInput!): Sector
-  sectors(after: SectorWhereUniqueInput, before: SectorWhereUniqueInput, first: Int, last: Int): [Sector!]!
-  subcategories(after: SubcategoryWhereUniqueInput, before: SubcategoryWhereUniqueInput, first: Int, last: Int): [Subcategory!]!
-  subcategory(where: SubcategoryWhereUniqueInput!): Subcategory
-  user(where: UserWhereUniqueInput!): User
-  users(after: UserWhereUniqueInput, before: UserWhereUniqueInput, first: Int, last: Int): [User!]!
-}
-
-type Sector {
-  createdAt: DateTime!
-  id: Int!
-  sector: String!
-}
-
-input SectorWhereUniqueInput {
-  id: Int
-}
-
-type Subcategory {
-  createdAt: DateTime!
-  id: Int!
-  subcategory: String!
-}
-
-input SubcategoryWhereUniqueInput {
-  id: Int
+  ok: Boolean!
 }
 
 type User {
-  createdAt: DateTime!
-  email: String!
-  id: Int!
-  name: String!
-  password: String!
-}
-
-input UserWhereUniqueInput {
+  createdAd: String
   email: String
-  id: Int
+  id: String
+  name: String
+  updatedAd: String
 }
